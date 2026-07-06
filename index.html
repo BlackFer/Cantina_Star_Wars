@@ -265,17 +265,18 @@
         </div>
         <div class="hub-panel">
             <div class="hub-label">— Selecciona tu destino —</div>
-            <a href="personajes.html" class="sw-btn" onclick="playBlaster(event)">
+            <!-- Los href se rellenan dinámicamente desde el script para facilitar cambios -->
+            <a id="linkPersonajes" href="#" class="sw-btn" onclick="playBlaster(event)">
                 <div class="btn-icon"><i data-lucide="users" style="width:20px;height:20px;color:#FFD700;"></i></div>
                 <div class="btn-text">Personajes<span>Explora héroes y villanos</span></div>
                 <div class="btn-arrow"><i data-lucide="chevron-right" style="width:18px;height:18px;"></i></div>
             </a>
-            <a href="guia-combate.html" class="sw-btn" onclick="playBlaster(event)">
+            <a id="linkReglas" href="#" class="sw-btn" onclick="playBlaster(event)">
                 <div class="btn-icon"><i data-lucide="swords" style="width:20px;height:20px;color:#FFD700;"></i></div>
-                <div class="btn-text">Guía de Combate<span>Tácticas y estrategias</span></div>
+                <div class="btn-text">Reglas Básicas<span>Tácticas y estrategias</span></div>
                 <div class="btn-arrow"><i data-lucide="chevron-right" style="width:18px;height:18px;"></i></div>
             </a>
-            <a href="generador-armas.html" class="sw-btn" onclick="playBlaster(event)">
+            <a id="linkGenerador" href="#" class="sw-btn" onclick="playBlaster(event)">
                 <div class="btn-icon"><i data-lucide="zap" style="width:20px;height:20px;color:#FFD700;"></i></div>
                 <div class="btn-text">Generador de Armas<span>Diseña tu arsenal</span></div>
                 <div class="btn-arrow"><i data-lucide="chevron-right" style="width:18px;height:18px;"></i></div>
@@ -288,6 +289,26 @@
     </div>
 
     <script>
+        // ======================================================
+        // 🎯 CONFIGURACIÓN DE ARCHIVOS HTML (¡CAMBIA AQUÍ!)
+        // ======================================================
+        // Escribe el nombre exacto del archivo .html para cada sección.
+        // Pueden ser archivos en la misma carpeta o rutas relativas.
+        // Ejemplos:
+        //   const archivoPersonajes = 'personajes.html';
+        //   const archivoReglas    = 'reglas-basicas.html';
+        //   const archivoGenerador = 'generador-armas.html';
+        // ======================================================
+        const archivoPersonajes = 'Creador_Personajes.html';
+        const archivoReglas    = 'Reglas_Basicas_STAR.html';
+        const archivoGenerador = 'generador-armas.html';
+        // ======================================================
+
+        // Asignar los href a los enlaces
+        document.getElementById('linkPersonajes').setAttribute('href', archivoPersonajes);
+        document.getElementById('linkReglas').setAttribute('href', archivoReglas);
+        document.getElementById('linkGenerador').setAttribute('href', archivoGenerador);
+
         lucide.createIcons();
 
         let audioCtx = null;
@@ -358,27 +379,27 @@
         // ║     Ejemplo: 'https://tu-servidor.com/cancion.mp3' ║
         // ╚═══════════════════════════════════════════════╝
         // ── Audio con diagnóstico visible ──
-const bgMusic = new Audio('audio.mp3');
-bgMusic.loop = true;
-bgMusic.volume = 0.4;
+        const bgMusic = new Audio('audio.mp3');
+        bgMusic.loop = true;
+        bgMusic.volume = 0.4;
 
-// Mostrar un pequeño cartel si hay error
-bgMusic.addEventListener('error', function() {
-    const errorMsg = document.createElement('div');
-    errorMsg.innerText = '❌ Error al cargar el audio. Revisa que el archivo "Star_Wars.mp3" esté en la misma carpeta que este HTML.';
-    errorMsg.style.position = 'fixed';
-    errorMsg.style.bottom = '20px';
-    errorMsg.style.left = '20px';
-    errorMsg.style.background = 'rgba(200,0,0,0.9)';
-    errorMsg.style.color = 'white';
-    errorMsg.style.padding = '10px 15px';
-    errorMsg.style.borderRadius = '8px';
-    errorMsg.style.fontSize = '14px';
-    errorMsg.style.zIndex = '9999';
-    errorMsg.style.maxWidth = '90%';
-    document.body.appendChild(errorMsg);
-    setTimeout(() => errorMsg.remove(), 8000); // desaparece tras 8 segundos
-});
+        // Mostrar un pequeño cartel si hay error
+        bgMusic.addEventListener('error', function() {
+            const errorMsg = document.createElement('div');
+            errorMsg.innerText = '❌ Error al cargar el audio. Revisa que el archivo "Star_Wars.mp3" esté en la misma carpeta que este HTML.';
+            errorMsg.style.position = 'fixed';
+            errorMsg.style.bottom = '20px';
+            errorMsg.style.left = '20px';
+            errorMsg.style.background = 'rgba(200,0,0,0.9)';
+            errorMsg.style.color = 'white';
+            errorMsg.style.padding = '10px 15px';
+            errorMsg.style.borderRadius = '8px';
+            errorMsg.style.fontSize = '14px';
+            errorMsg.style.zIndex = '9999';
+            errorMsg.style.maxWidth = '90%';
+            document.body.appendChild(errorMsg);
+            setTimeout(() => errorMsg.remove(), 8000);
+        });
 
         // ============================================
         // INICIO
@@ -393,6 +414,5 @@ bgMusic.addEventListener('error', function() {
         overlay.addEventListener('touchend', function(e) { e.preventDefault(); begin(); });
         document.addEventListener('keydown', function h() { begin(); document.removeEventListener('keydown', h); });
     </script>
-</body> 
-    ( actualizado )
+</body>
 </html>
