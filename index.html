@@ -358,9 +358,28 @@
         // ║  4. Si es una URL externa:                    ║
         // ║     Ejemplo: 'https://tu-servidor.com/cancion.mp3' ║
         // ╚═══════════════════════════════════════════════╝
-        const bgMusic = new Audio('Star_Wars.mp3');
-        bgMusic.loop = true;
-        bgMusic.volume = 0.4;
+        // ── Audio con diagnóstico visible ──
+const bgMusic = new Audio('Star_Wars.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+// Mostrar un pequeño cartel si hay error
+bgMusic.addEventListener('error', function() {
+    const errorMsg = document.createElement('div');
+    errorMsg.innerText = '❌ Error al cargar el audio. Revisa que el archivo "Star_Wars.mp3" esté en la misma carpeta que este HTML.';
+    errorMsg.style.position = 'fixed';
+    errorMsg.style.bottom = '20px';
+    errorMsg.style.left = '20px';
+    errorMsg.style.background = 'rgba(200,0,0,0.9)';
+    errorMsg.style.color = 'white';
+    errorMsg.style.padding = '10px 15px';
+    errorMsg.style.borderRadius = '8px';
+    errorMsg.style.fontSize = '14px';
+    errorMsg.style.zIndex = '9999';
+    errorMsg.style.maxWidth = '90%';
+    document.body.appendChild(errorMsg);
+    setTimeout(() => errorMsg.remove(), 8000); // desaparece tras 8 segundos
+});
 
         // ============================================
         // INICIO
