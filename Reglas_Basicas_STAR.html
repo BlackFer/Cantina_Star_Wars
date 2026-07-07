@@ -553,6 +553,23 @@
         .no-results i { font-size: 2rem; display: block; margin-bottom: 12px; color: var(--accent-cyan); opacity: 0.4; }
         .no-results.show { display: block; }
 
+        /* === BOTÓN INICIO (STATUS BAR) === */
+        .status-home-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .status-home-link:hover {
+            color: var(--accent-yellow);
+            text-shadow: 0 0 8px rgba(255,232,31,0.5);
+        }
+
         /* === MÓVIL === */
         @media (max-width: 768px) {
             #menuToggle { display: flex; }
@@ -660,6 +677,9 @@
 
     <main id="content">
         <div class="status-bar" aria-hidden="true">
+            <a href="index.html" class="status-home-link" aria-label="Volver al inicio">
+                <i class="fas fa-home"></i> Inicio
+            </a>
             <span><span class="status-dot"></span>COMBAT REFERENCE — CLASSIFIED</span>
             <span class="status-signal">SAGA ED. ◆◆◆</span>
         </div>
@@ -1046,4 +1066,5 @@
         }
     </script>
 </body>
+</html>
 </html>
