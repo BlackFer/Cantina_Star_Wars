@@ -39,7 +39,6 @@
             overflow-x:hidden;
         }
 
-        /* === FONDO CON IMAGEN === */
         .bg-image{
             position:fixed;inset:0;z-index:-3;
             background:url('https://z-cdn-media.chatglm.cn/files/e1cdd88b-4294-472e-882d-ebf878885cbf.jpg?auth_key=1883431810-72cce86d326d4a55a9229ec1a32bbb4f-0-d8144673e339405b3cbb9aaf40eb2a7c') center/cover no-repeat;
@@ -52,7 +51,6 @@
         }
         .scanlines{position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,232,31,0.008) 2px,rgba(255,232,31,0.008) 4px);pointer-events:none;z-index:9998;}
 
-        /* Partículas amarillas flotantes */
         .particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden;}
         .particle{
             position:absolute;
@@ -70,7 +68,6 @@
             100%{opacity:0;transform:translateY(-10vh) scale(1);}
         }
 
-        /* === BOTÓN INICIO FLOTANTE === */
         .home-btn {
             position:fixed;top:12px;left:12px;
             display:flex;align-items:center;gap:8px;
@@ -94,12 +91,7 @@
             transform:translateY(-1px);
         }
 
-        /* === HEADER === */
-        .app-header{
-            text-align:center;
-            padding:28px 20px 14px;
-            position:relative;
-        }
+        .app-header{text-align:center;padding:28px 20px 14px;position:relative;}
         .app-header h1{
             font-family:'Orbitron',sans-serif;
             font-size:clamp(1.2rem,3.5vw,2rem);
@@ -123,71 +115,47 @@
         .hdiamond{color:var(--accent-yellow);font-size:.5rem;}
         @keyframes fade-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-        /* === LAYOUT PRINCIPAL === */
         .creator-wrap{
-            max-width:1440px;
-            margin:0 auto;
+            max-width:1440px;margin:0 auto;
             padding:0 16px 60px;
-            display:flex;
-            gap:20px;
-            align-items:flex-start;
+            display:flex;gap:20px;align-items:flex-start;
         }
 
-        /* === PANEL FORMULARIO === */
-        .form-panel{
-            flex:2.2;min-width:0;
-            display:flex;flex-direction:column;gap:14px;
-        }
+        .form-panel{flex:2.2;min-width:0;display:flex;flex-direction:column;gap:14px;}
         .form-card{
             background:rgba(15,12,5,0.45);
             backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
             border:1px solid rgba(255,232,31,0.12);
-            border-radius:14px;
-            padding:18px;
+            border-radius:14px;padding:18px;
             border-left:3px solid var(--accent-yellow);
             transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
             animation:card-in .5s var(--ease) both;
         }
-        .form-card:hover{
-            border-color:rgba(255,232,31,0.3);
-            box-shadow:0 0 20px rgba(255,232,31,0.06);
-        }
+        .form-card:hover{border-color:rgba(255,232,31,0.3);box-shadow:0 0 20px rgba(255,232,31,0.06);}
         @keyframes card-in{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
         .form-card h3{
             font-family:'Orbitron',sans-serif;
             font-size:clamp(.65rem,1.2vw,.75rem);
             font-weight:700;letter-spacing:2px;
-            color:var(--accent-gold);
-            margin-bottom:12px;
+            color:var(--accent-gold);margin-bottom:12px;
             display:flex;align-items:center;gap:8px;
         }
         .form-card h3 i{color:var(--accent-yellow);font-size:.85rem;}
 
-        /* === FORM ELEMENTS === */
         .field{margin-bottom:10px;}
-        .field label{
-            display:block;font-weight:600;
-            color:var(--accent-warm);font-size:.88rem;
-            margin-bottom:3px;letter-spacing:.5px;
-        }
+        .field label{display:block;font-weight:600;color:var(--accent-warm);font-size:.88rem;margin-bottom:3px;letter-spacing:.5px;}
         .field select,
         .field input[type="text"],
         .field input[type="number"],
         .field input[type="url"]{
-            width:100%;padding:10px 14px;
-            border-radius:10px;
+            width:100%;padding:10px 14px;border-radius:10px;
             border:1px solid rgba(255,232,31,0.15);
-            background:rgba(0,0,0,0.4);
-            color:var(--text-primary);
-            font-family:'Rajdhani',sans-serif;
-            font-size:.92rem;font-weight:500;outline:none;
+            background:rgba(0,0,0,0.4);color:var(--text-primary);
+            font-family:'Rajdhani',sans-serif;font-size:.92rem;font-weight:500;outline:none;
             transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
         }
         .field select:focus,
-        .field input:focus{
-            border-color:var(--accent-yellow);
-            box-shadow:0 0 12px rgba(255,232,31,0.15);
-        }
+        .field input:focus{border-color:var(--accent-yellow);box-shadow:0 0 12px rgba(255,232,31,0.15);}
         .field select option{background:#1a1408;color:#f0e6c8;}
         .field input:disabled{opacity:.4;cursor:not-allowed;}
         .field .hint{font-size:.78rem;color:var(--text-muted);margin-top:2px;}
@@ -196,19 +164,15 @@
         .attr-grid .field{margin-bottom:4px;}
 
         .mod-ref{
-            background:rgba(255,232,31,0.04);
-            border:1px solid rgba(255,232,31,0.1);
-            border-radius:10px;padding:8px 12px;
-            font-size:.78rem;color:var(--text-secondary);margin-top:8px;overflow-x:auto;
+            background:rgba(255,232,31,0.04);border:1px solid rgba(255,232,31,0.1);
+            border-radius:10px;padding:8px 12px;font-size:.78rem;color:var(--text-secondary);margin-top:8px;overflow-x:auto;
         }
         .mod-ref table{border-collapse:collapse;width:100%;}
         .mod-ref td{padding:2px 6px;border:1px solid rgba(255,232,31,0.08);text-align:center;white-space:nowrap;}
         .mod-ref td:first-child{color:var(--accent-yellow);font-weight:600;}
 
-        /* === PUNTOS === */
         .points-box{
-            background:rgba(255,232,31,0.08);
-            border:1px solid var(--border-yellow);
+            background:rgba(255,232,31,0.08);border:1px solid var(--border-yellow);
             border-radius:12px;padding:10px 16px;text-align:center;margin-bottom:10px;
         }
         .points-box .pts-num{font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:var(--accent-yellow);}
@@ -217,47 +181,30 @@
         .pts-over{color:var(--accent-red);}
         .pts-left{color:var(--accent-gold);}
 
-        /* === NIVEL ROW === */
         .level-row{display:flex;gap:10px;align-items:center;}
         .level-row .field{flex:1;margin-bottom:0;}
 
-        /* === ESPECIE INFO === */
         .species-info{
-            background:rgba(255,232,31,0.04);
-            border:1px solid rgba(255,232,31,0.1);
-            border-radius:10px;padding:8px 12px;
-            font-size:.85rem;color:var(--text-secondary);margin-top:4px;line-height:1.5;
+            background:rgba(255,232,31,0.04);border:1px solid rgba(255,232,31,0.1);
+            border-radius:10px;padding:8px 12px;font-size:.85rem;color:var(--text-secondary);margin-top:4px;line-height:1.5;
         }
         .species-info .sp-mod{color:var(--accent-yellow);font-weight:600;}
 
-        /* === CLASS INFO === */
         .class-info{
-            background:rgba(255,232,31,0.04);
-            border:1px solid rgba(255,232,31,0.1);
-            border-radius:10px;padding:10px 12px;
-            font-size:.85rem;color:var(--text-secondary);margin-top:4px;line-height:1.5;
+            background:rgba(255,232,31,0.04);border:1px solid rgba(255,232,31,0.1);
+            border-radius:10px;padding:10px 12px;font-size:.85rem;color:var(--text-secondary);margin-top:4px;line-height:1.5;
         }
-        .type-badge{
-            display:inline-block;padding:2px 10px;border-radius:20px;
-            font-weight:700;font-size:.7rem;letter-spacing:.5px;margin-right:6px;
-        }
+        .type-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-weight:700;font-size:.7rem;letter-spacing:.5px;margin-right:6px;}
         .type-badge.hero{background:rgba(255,232,31,0.15);color:var(--accent-yellow);border:1px solid rgba(255,232,31,0.3);}
         .type-badge.prestige{background:rgba(255,165,2,0.15);color:var(--accent-orange);border:1px solid rgba(255,165,2,0.3);}
         .class-info .req{color:var(--accent-orange);margin-top:4px;font-size:.8rem;}
         .class-info .base-sk{color:var(--accent-gold);margin-top:3px;font-size:.8rem;}
 
-        /* === HABILIDADES === */
-        .skill-header{
-            display:flex;align-items:center;justify-content:space-between;
-            flex-wrap:wrap;gap:8px;margin-bottom:8px;
-        }
+        .skill-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
         .skill-counter{font-size:.9rem;color:var(--text-secondary);}
         .skill-counter span{font-weight:700;color:var(--accent-yellow);}
         .skill-btns{display:flex;gap:6px;}
-        .skill-list{
-            display:grid;grid-template-columns:1fr 1fr;
-            gap:5px;max-height:320px;overflow-y:auto;padding:4px;
-        }
+        .skill-list{display:grid;grid-template-columns:1fr 1fr;gap:5px;max-height:320px;overflow-y:auto;padding:4px;}
         .skill-list::-webkit-scrollbar{width:4px;}
         .skill-list::-webkit-scrollbar-track{background:transparent;}
         .skill-list::-webkit-scrollbar-thumb{background:rgba(255,232,31,0.25);border-radius:4px;}
@@ -267,25 +214,18 @@
             font-size:.85rem;border:1px solid transparent;transition:border-color .2s;
         }
         .sk-item:hover{border-color:rgba(255,232,31,0.15);}
-        .sk-item input[type="checkbox"]{
-            width:16px;height:16px;margin:0;
-            accent-color:var(--accent-yellow);cursor:pointer;flex-shrink:0;
-        }
+        .sk-item input[type="checkbox"]{width:16px;height:16px;margin:0;accent-color:var(--accent-yellow);cursor:pointer;flex-shrink:0;}
         .sk-item label{margin:0;cursor:pointer;color:var(--text-primary);font-weight:400;flex:1;font-size:.85rem;}
         .sk-item .sk-mod{color:var(--accent-gold);font-weight:700;font-size:.82rem;white-space:nowrap;}
 
-        /* === DOTE/TALENTO === */
         .ft-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
         .ft-grid .field{margin-bottom:4px;}
         .effect-desc{
             font-size:.82rem;color:var(--accent-gold);
-            background:rgba(255,232,31,0.04);
-            border:1px solid rgba(255,232,31,0.1);
-            border-radius:10px;padding:6px 10px;margin-top:4px;
-            min-height:32px;line-height:1.4;
+            background:rgba(255,232,31,0.04);border:1px solid rgba(255,232,31,0.1);
+            border-radius:10px;padding:6px 10px;margin-top:4px;min-height:32px;line-height:1.4;
         }
 
-        /* === BOTONES === */
         .btn{
             display:inline-flex;align-items:center;justify-content:center;gap:6px;
             padding:9px 18px;border-radius:10px;border:1px solid transparent;
@@ -305,10 +245,8 @@
         .btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
         .action-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
 
-        /* === GUARDADOS === */
         .saved-box{
-            background:rgba(0,0,0,0.25);
-            border:1px solid rgba(255,232,31,0.1);
+            background:rgba(0,0,0,0.25);border:1px solid rgba(255,232,31,0.1);
             border-radius:12px;padding:10px;margin-top:10px;
         }
         .saved-box strong{color:var(--text-secondary);font-size:.85rem;}
@@ -317,6 +255,8 @@
             background:rgba(0,0,0,0.3);padding:8px 12px;border-radius:10px;
             margin-top:6px;border:1px solid rgba(255,232,31,0.08);
         }
+        .saved-item.clickable{cursor:pointer;transition:border-color .2s;}
+        .saved-item.clickable:hover{border-color:rgba(255,232,31,0.3);}
         .saved-item .si-name{font-weight:600;color:var(--text-primary);font-size:.88rem;}
         .saved-item .si-info{font-size:.75rem;color:var(--text-muted);}
         .saved-item .si-del{
@@ -325,7 +265,6 @@
         }
         .saved-item .si-del:hover{background:rgba(255,71,87,0.15);}
 
-        /* === PANEL VISTA PREVIA === */
         .preview-panel{flex:1.5;min-width:0;position:sticky;top:16px;}
         .preview-title{
             font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700;
@@ -338,8 +277,7 @@
         .char-card{
             background:rgba(10,8,2,0.55);
             backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-            border:1px solid var(--border-yellow);
-            border-radius:18px;padding:20px;
+            border:1px solid var(--border-yellow);border-radius:18px;padding:20px;
             box-shadow:0 0 50px rgba(255,232,31,0.06),0 8px 30px rgba(0,0,0,0.5);
             animation:card-in .5s var(--ease) .2s both;
         }
@@ -349,17 +287,12 @@
             margin-bottom:10px;text-shadow:0 0 20px rgba(255,232,31,0.2);word-break:break-word;
         }
         .cc-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
-        .cc-badge{
-            display:inline-block;padding:3px 12px;border-radius:20px;
-            font-weight:700;font-size:.75rem;letter-spacing:.5px;
-        }
+        .cc-badge{display:inline-block;padding:3px 12px;border-radius:20px;font-weight:700;font-size:.75rem;letter-spacing:.5px;}
         .cc-badge.class-b{background:rgba(255,232,31,0.12);color:var(--accent-yellow);border:1px solid rgba(255,232,31,0.25);}
         .cc-badge.species-b{background:rgba(46,213,115,0.12);color:var(--accent-green);border:1px solid rgba(46,213,115,0.25);}
         .cc-badge.level-b{background:rgba(255,193,7,0.12);color:var(--accent-gold);border:1px solid rgba(255,193,7,0.25);}
         .cc-badge.prestige-b{background:rgba(255,165,2,0.12);color:var(--accent-orange);border:1px solid rgba(255,165,2,0.25);}
-
         .cc-species-mod{font-size:.78rem;color:var(--accent-gold);margin-bottom:8px;}
-
         .cc-stats{
             display:grid;grid-template-columns:repeat(3,1fr);gap:5px;
             background:rgba(0,0,0,0.3);padding:10px;border-radius:14px;
@@ -369,21 +302,16 @@
         .cc-stat .cs-name{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
         .cc-stat .cs-val{font-family:'Orbitron',sans-serif;font-size:1.05rem;font-weight:700;color:var(--accent-yellow);}
         .cc-stat .cs-mod{font-size:.75rem;color:var(--accent-gold);font-weight:600;}
-
         .cc-divider{border:none;border-top:1px solid rgba(255,232,31,0.1);margin:12px 0;}
-
         .cc-row{margin-bottom:6px;font-size:.9rem;}
         .cc-row strong{color:#fff;}
         .cc-row .cc-effect{font-size:.82rem;color:var(--accent-gold);margin-left:4px;}
-
         .cc-hp{
-            text-align:center;
-            background:rgba(255,71,87,0.08);border:1px solid rgba(255,71,87,0.2);
+            text-align:center;background:rgba(255,71,87,0.08);border:1px solid rgba(255,71,87,0.2);
             border-radius:14px;padding:10px;margin:8px 0;
         }
         .cc-hp .hp-label{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
         .cc-hp .hp-val{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:var(--accent-red);}
-
         .cc-defenses{
             display:flex;justify-content:space-around;
             background:rgba(0,0,0,0.3);border:1px solid rgba(255,232,31,0.08);
@@ -392,31 +320,25 @@
         .cc-def{text-align:center;}
         .cc-def .cd-label{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
         .cc-def .cd-val{font-family:'Orbitron',sans-serif;font-size:1.05rem;font-weight:700;color:var(--accent-yellow);}
-
         .cc-skills-title{font-size:.85rem;color:var(--text-secondary);margin-bottom:5px;}
         .cc-skills-list{font-size:.85rem;color:var(--accent-gold);line-height:1.6;}
-
         .cc-weapon{
-            text-align:center;
-            background:rgba(0,0,0,0.25);border:1px solid rgba(255,232,31,0.08);
+            text-align:center;background:rgba(0,0,0,0.25);border:1px solid rgba(255,232,31,0.08);
             border-radius:12px;padding:10px;margin:8px 0;font-size:.88rem;
         }
         .cc-weapon strong{color:var(--accent-yellow);}
-
         .cc-photo{
-            width:100%;aspect-ratio:1/1;
-            background:rgba(0,0,0,0.4);border:1px solid rgba(255,232,31,0.15);
-            border-radius:14px;overflow:hidden;margin-bottom:12px;
-            display:flex;align-items:center;justify-content:center;
+            width:100%;aspect-ratio:1/1;background:rgba(0,0,0,0.4);
+            border:1px solid rgba(255,232,31,0.15);border-radius:14px;
+            overflow:hidden;margin-bottom:12px;display:flex;align-items:center;justify-content:center;
         }
         .cc-photo img{width:100%;height:100%;object-fit:cover;}
         .cc-photo .ph-placeholder{color:var(--text-muted);font-size:.8rem;text-align:center;padding:20px;}
 
-        /* === TOAST === */
         .toast{
             position:fixed;bottom:24px;left:50%;
             transform:translateX(-50%) translateY(80px);
-            background:rgba(15,12,5,0.9);border:1px solid var(--border-glow);
+            background:rgba(15,12,5,0.92);border:1px solid var(--border-glow);
             border-radius:12px;padding:12px 24px;
             color:var(--accent-yellow);font-family:'Rajdhani',sans-serif;
             font-size:.9rem;font-weight:600;z-index:10000;opacity:0;
@@ -426,7 +348,6 @@
         }
         .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-        /* === MODAL CARGAR === */
         .modal-overlay{
             display:none;position:fixed;inset:0;z-index:5000;
             background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
@@ -434,7 +355,7 @@
         }
         .modal-overlay.active{display:flex;}
         .modal-box{
-            background:rgba(15,12,5,0.9);border:1px solid var(--border-yellow);
+            background:rgba(15,12,5,0.92);border:1px solid var(--border-yellow);
             border-radius:18px;padding:24px;max-width:460px;width:100%;
             backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
             box-shadow:0 0 60px rgba(255,232,31,0.1);max-height:80vh;overflow-y:auto;
@@ -446,7 +367,6 @@
         }
         .modal-close:hover{transform:scale(1.2);}
 
-        /* === RESPONSIVE === */
         @media(max-width:1024px){
             .creator-wrap{gap:16px;}
             .form-card{padding:16px;}
@@ -478,15 +398,11 @@
             .cc-stats{grid-template-columns:1fr 1fr;}
             .cc-name{font-size:1rem;}
         }
-
-        /* === REDUCIR MOVIMIENTO === */
         @media(prefers-reduced-motion:reduce){
             *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
             .form-card,.char-card,.preview-title{animation:none!important;opacity:1;transform:none;}
             .particle{animation:none!important;display:none;}
         }
-
-        /* === IMPRESIÓN === */
         @media print{
             body{background:#fff;color:#111;font-size:10pt;}
             body *{visibility:hidden;}
@@ -549,7 +465,6 @@
 
     <main class="creator-wrap">
         <div class="form-panel">
-            <!-- DATOS -->
             <div class="form-card" style="animation-delay:0s">
                 <h3><i class="fas fa-id-card"></i> DATOS DEL PERSONAJE</h3>
                 <div class="field">
@@ -575,7 +490,6 @@
                 </div>
             </div>
 
-            <!-- CARACTERÍSTICAS -->
             <div class="form-card" style="animation-delay:.07s">
                 <h3><i class="fas fa-dna"></i> CARACTERISTICAS</h3>
                 <div class="points-box">
@@ -597,7 +511,6 @@
                 </div>
             </div>
 
-            <!-- FOTO -->
             <div class="form-card" style="animation-delay:.14s">
                 <h3><i class="fas fa-camera"></i> FOTO DEL PERSONAJE</h3>
                 <div class="field">
@@ -607,7 +520,6 @@
                 </div>
             </div>
 
-            <!-- HABILIDADES -->
             <div class="form-card" style="animation-delay:.21s">
                 <h3><i class="fas fa-book-open"></i> HABILIDADES</h3>
                 <div class="skill-header">
@@ -620,7 +532,6 @@
                 <div id="skillListContainer" class="skill-list" role="group" aria-label="Lista de habilidades"></div>
             </div>
 
-            <!-- DOTES Y TALENTOS -->
             <div class="form-card" style="animation-delay:.28s">
                 <h3><i class="fas fa-bolt"></i> DOTES Y TALENTOS</h3>
                 <div class="ft-grid">
@@ -637,7 +548,6 @@
                 </div>
             </div>
 
-            <!-- ARMA -->
             <div class="form-card" style="animation-delay:.35s">
                 <h3><i class="fas fa-crosshairs"></i> ARMA PRINCIPAL</h3>
                 <div class="field">
@@ -667,7 +577,6 @@
                 </div>
             </div>
 
-            <!-- ACCIONES -->
             <div class="form-card" style="animation-delay:.42s">
                 <h3><i class="fas fa-floppy-disk"></i> GUARDAR / EXPORTAR</h3>
                 <div class="action-bar">
@@ -683,7 +592,6 @@
             </div>
         </div>
 
-        <!-- VISTA PREVIA -->
         <aside class="preview-panel" aria-label="Vista previa del personaje">
             <div class="preview-title"><i class="fas fa-scroll"></i> FICHA DE PERSONAJE</div>
             <div id="characterDisplay">
@@ -718,7 +626,6 @@
         </aside>
     </main>
 
-    <!-- MODAL CARGAR -->
     <div class="modal-overlay" id="loadModal">
         <div class="modal-box">
             <button class="modal-close" id="closeModal" aria-label="Cerrar"><i class="fas fa-times"></i></button>
@@ -731,26 +638,24 @@
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
     <script>
-    /* ============================================================
-       PARTÍCULAS AMARILLAS FLOTANTES
-    ============================================================ */
+    /* ====== PARTÍCULAS ====== */
     (function(){
-        const box=document.getElementById('particles');
-        for(let i=0;i<25;i++){
-            const p=document.createElement('div');
-            p.className='particle';
-            p.style.left=Math.random()*100+'%';
-            p.style.animationDuration=(8+Math.random()*12)+'s';
-            p.style.animationDelay=(Math.random()*10)+'s';
-            p.style.width=p.style.height=(1.5+Math.random()*3)+'px';
+        var box = document.getElementById('particles');
+        for(var i = 0; i < 25; i++){
+            var p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (8 + Math.random() * 12) + 's';
+            p.style.animationDelay = (Math.random() * 10) + 's';
+            var size = (1.5 + Math.random() * 3) + 'px';
+            p.style.width = size;
+            p.style.height = size;
             box.appendChild(p);
         }
     })();
 
-    /* ============================================================
-       BASE DE DATOS
-    ============================================================ */
-    const SPECIES_DATA={
+    /* ====== BASE DE DATOS ====== */
+    var SPECIES_DATA = {
         "Humano":{mod:{cualquiera:2},desc:"Versatil y adaptable. Obtiene +2 a una caracteristica a tu eleccion."},
         "Twi'lek":{mod:{CAR:2,SAB:-2},desc:"Exoticos y diplomaticos. Famosos por sus lekku y su habilidad social."},
         "Wookiee":{mod:{FUE:4,DES:-2,CAR:-2},desc:"Guerreros peludos y leales. Inmensamente fuertes y temidos en combate."},
@@ -771,7 +676,7 @@
         "Devaronian":{mod:{FUE:2,CAR:2,SAB:-2},desc:"Impulsivos y carismaticos. Humanoides rojos con cuernos y gran energia."}
     };
 
-    const CLASS_DATA={
+    var CLASS_DATA = {
         "Jedi":{type:"hero",baseSkills:2,description:"Guerrero mistico del sable de luz y la Fuerza.",talents:["Deflexion de sable","Empujon de Fuerza","Control de Fuerza","Saber combativo"]},
         "Noble":{type:"hero",baseSkills:4,description:"Lider carismatico, negociador y maestro de contactos.",talents:["Contactos","Inspiracion","Liderazgo","Finanzas"]},
         "Picaro":{type:"hero",baseSkills:4,description:"Astuto, ladron, especialista en enganos y disparos certeros.",talents:["Golpe sucio","Suerte","Ataque furtivo","Astucia callejera"]},
@@ -791,7 +696,7 @@
         "Sith Lord":{type:"prestige",baseSkills:2,description:"Senor Sith, maestro del lado oscuro.",requirements:"Nivel 12+, Ser Aprendiz Sith, Usar la Fuerza entrenado",talents:["Tormenta de Fuerza","Dominio mental","Inmortalidad oscura"]}
     };
 
-    const FEATS=[
+    var FEATS = [
         {name:"Punteria precisa",effect:"Ignora cobertura parcial al disparar.",modifier:""},
         {name:"Doble empuñadura",effect:"Permite disparar dos armas ligeras con penalizacion -5 a cada mano.",modifier:"-5"},
         {name:"Combate con dos armas",effect:"Permite usar dos armas cuerpo a cuerpo con penalizacion -5 a cada ataque.",modifier:"-5"},
@@ -802,7 +707,7 @@
         {name:"Fuerza Sensible",effect:"Te permite usar la habilidad Usar la Fuerza aunque no seas Jedi.",modifier:""}
     ];
 
-    const ALL_SKILLS=[
+    var ALL_SKILLS = [
         {name:"Acrobacias",attr:"DES"},{name:"Conocimiento (cualquier)",attr:"INT"},
         {name:"Enganar",attr:"CAR"},{name:"Iniciativa",attr:"DES"},
         {name:"Intimidar",attr:"CAR"},{name:"Mecanica",attr:"INT"},
@@ -814,404 +719,644 @@
         {name:"Ciencias",attr:"INT"}
     ];
 
-    /* ============================================================
-       ESTADO
-    ============================================================ */
-    const PUNTOS_BASE=25;
-    const costoStats={8:0,9:1,10:2,11:3,12:4,13:5,14:6,15:8,16:10,17:13,18:16};
-    let trainedSkills=[];
-    let currentFeat=FEATS[0];
-    let currentTalent=null;
+    /* ====== ESTADO ====== */
+    var PUNTOS_BASE = 25;
+    var costoStats = {8:0,9:1,10:2,11:3,12:4,13:5,14:6,15:8,16:10,17:13,18:16};
+    var trainedSkills = [];
+    var currentFeat = FEATS[0];
+    var currentTalent = null;
 
-    /* ============================================================
-       ELEMENTOS DOM
-    ============================================================ */
-    const $=id=>document.getElementById(id);
-    const fue=$('fue'),des=$('des'),con=$('con'),int=$('int'),sab=$('sab'),car=$('car');
-    const charName=$('charName'),species=$('species'),classType=$('classType'),level=$('level');
-    const weapon=$('weapon'),photoUrl=$('photoUrl');
+    /* ====== ELEMENTOS DOM ====== */
+    function $(id){ return document.getElementById(id); }
+    var fue = $('fue'), des = $('des'), con = $('con'), int_ = $('int'), sab = $('sab'), car = $('car');
+    var charName = $('charName'), species = $('species'), classType = $('classType'), level = $('level');
+    var weapon = $('weapon'), photoUrl = $('photoUrl');
 
-    /* ============================================================
-       AUXILIARES
-    ============================================================ */
-    function getCosto(v){return costoStats[Math.min(18,Math.max(8,v))]||0;}
-    function getPuntosMax(){return PUNTOS_BASE+Math.floor((parseInt(level.value)||1)/2);}
-    function calcPuntosUsados(){return getCosto(+fue.value)+getCosto(+des.value)+getCosto(+con.value)+getCosto(+int.value)+getCosto(+sab.value)+getCosto(+car.value);}
-    function getMod(v){return Math.floor((v-10)/2);}
-    function getAttr(n){const m={FUE:fue,DES:des,CON:con,INT:int,SAB:sab,CAR:car};return parseInt(m[n].value)||10;}
-    function getCls(n){return CLASS_DATA[n]||CLASS_DATA["Explorador"];}
-    function getMaxSkills(){const d=getCls(classType.value),lv=parseInt(level.value)||1;return Math.min(d.baseSkills+Math.floor((lv-1)/2),ALL_SKILLS.length);}
-
-    /* ============================================================
-       TOAST
-    ============================================================ */
-    let toastTimer=null;
-    function showToast(msg){
-        const t=$('toast');t.textContent=msg;t.classList.add('show');
-        clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2400);
+    /* ====== AUXILIARES ====== */
+    function getCosto(v){ return costoStats[Math.min(18, Math.max(8, v))] || 0; }
+    function getPuntosMax(){ return PUNTOS_BASE + Math.floor((parseInt(level.value) || 1) / 2); }
+    function calcPuntosUsados(){ return getCosto(+fue.value) + getCosto(+des.value) + getCosto(+con.value) + getCosto(+int_.value) + getCosto(+sab.value) + getCosto(+car.value); }
+    function getMod(v){ return Math.floor((v - 10) / 2); }
+    function getAttr(n){
+        var m = {FUE:fue, DES:des, CON:con, INT:int_, SAB:sab, CAR:car};
+        return parseInt(m[n].value) || 10;
+    }
+    function getAttrFromData(n, d){
+        var m = {FUE:'fue', DES:'des', CON:'con', INT:'int', SAB:'sab', CAR:'car'};
+        return d[m[n]] || 10;
+    }
+    function getCls(n){ return CLASS_DATA[n] || CLASS_DATA["Explorador"]; }
+    function getMaxSkills(){
+        var d = getCls(classType.value), lv = parseInt(level.value) || 1;
+        return Math.min(d.baseSkills + Math.floor((lv - 1) / 2), ALL_SKILLS.length);
     }
 
-    /* ============================================================
-       ESPECIES
-    ============================================================ */
+    /* ====== TOAST ====== */
+    var toastTimer = null;
+    function showToast(msg){
+        var t = $('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2400);
+    }
+
+    /* ====== ESPECIES ====== */
     function populateSpecies(){
-        species.innerHTML='';
-        Object.keys(SPECIES_DATA).forEach(sp=>{const o=document.createElement('option');o.value=sp;o.textContent=sp;species.appendChild(o);});
-        species.value='Humano';
-        species.addEventListener('change',()=>{updateSpeciesInfo();updateAll();});
+        species.innerHTML = '';
+        var keys = Object.keys(SPECIES_DATA);
+        for(var i = 0; i < keys.length; i++){
+            var o = document.createElement('option');
+            o.value = keys[i];
+            o.textContent = keys[i];
+            species.appendChild(o);
+        }
+        species.value = 'Humano';
+        species.addEventListener('change', function(){ updateSpeciesInfo(); updateAll(); });
         updateSpeciesInfo();
     }
     function updateSpeciesInfo(){
-        const d=SPECIES_DATA[species.value],box=$('speciesInfo');
-        if(!d){box.innerHTML='';return;}
-        const e=Object.entries(d.mod);
-        let mt=e.length===1&&e[0][0]==='cualquiera'?'+2 a una caracteristica a eleccion':e.map(([k,v])=>`${k} ${v>0?'+':''}${v}`).join(', ');
-        box.innerHTML=`${d.desc} <span class="sp-mod">(Modificadores: ${mt})</span>`;
+        var d = SPECIES_DATA[species.value], box = $('speciesInfo');
+        if(!d){ box.innerHTML = ''; return; }
+        var entries = Object.entries(d.mod);
+        var mt = entries.length === 1 && entries[0][0] === 'cualquiera'
+            ? '+2 a una caracteristica a eleccion'
+            : entries.map(function(e){ return e[0] + ' ' + (e[1] > 0 ? '+' : '') + e[1]; }).join(', ');
+        box.innerHTML = d.desc + ' <span class="sp-mod">(Modificadores: ' + mt + ')</span>';
     }
     function getSpeciesModText(){
-        const d=SPECIES_DATA[species.value];if(!d)return'';
-        const e=Object.entries(d.mod);
-        return e.length===1&&e[0][0]==='cualquiera'?'+2 a elegir':e.map(([k,v])=>`${k} ${v>0?'+':''}${v}`).join(', ');
+        var d = SPECIES_DATA[species.value];
+        if(!d) return '';
+        var entries = Object.entries(d.mod);
+        return entries.length === 1 && entries[0][0] === 'cualquiera'
+            ? '+2 a elegir'
+            : entries.map(function(e){ return e[0] + ' ' + (e[1] > 0 ? '+' : '') + e[1]; }).join(', ');
     }
 
-    /* ============================================================
-       CLASES
-    ============================================================ */
+    /* ====== CLASES ====== */
     function populateClasses(){
-        classType.innerHTML='';
-        const gh=document.createElement('optgroup');gh.label='Clases Heroe';
-        const gp=document.createElement('optgroup');gp.label='Clases de Prestigio';
-        Object.entries(CLASS_DATA).forEach(([k,v])=>{const o=document.createElement('option');o.value=k;o.textContent=k;(v.type==='hero'?gh:gp).appendChild(o);});
-        classType.appendChild(gh);classType.appendChild(gp);
-        classType.value='Explorador';
-        classType.addEventListener('change',()=>{updateClassInfo();populateTalents();updateAll();});
-        updateClassInfo();populateTalents();
+        classType.innerHTML = '';
+        var gh = document.createElement('optgroup');
+        gh.label = 'Clases Heroe';
+        var gp = document.createElement('optgroup');
+        gp.label = 'Clases de Prestigio';
+        var keys = Object.keys(CLASS_DATA);
+        for(var i = 0; i < keys.length; i++){
+            var k = keys[i], v = CLASS_DATA[k];
+            var o = document.createElement('option');
+            o.value = k;
+            o.textContent = k;
+            if(v.type === 'hero') gh.appendChild(o);
+            else gp.appendChild(o);
+        }
+        classType.appendChild(gh);
+        classType.appendChild(gp);
+        classType.value = 'Explorador';
+        classType.addEventListener('change', function(){ updateClassInfo(); populateTalents(); updateAll(); });
+        updateClassInfo();
+        populateTalents();
     }
     function updateClassInfo(){
-        const d=getCls(classType.value),box=$('classInfoBox');
-        const badge=`<span class="type-badge ${d.type}">${d.type==='hero'?'HEROE':'PRESTIGIO'}</span>`;
-        let html=badge+d.description;
-        if(d.requirements)html+=`<div class="req"><i class="fas fa-lock" style="margin-right:4px;"></i>Requisitos: ${d.requirements}</div>`;
-        html+=`<div class="base-sk"><i class="fas fa-star" style="margin-right:4px;"></i>Habilidades base por nivel: ${d.baseSkills}</div>`;
-        box.innerHTML=html;
+        var d = getCls(classType.value), box = $('classInfoBox');
+        var badge = '<span class="type-badge ' + d.type + '">' + (d.type === 'hero' ? 'HEROE' : 'PRESTIGIO') + '</span>';
+        var html = badge + d.description;
+        if(d.requirements) html += '<div class="req"><i class="fas fa-lock" style="margin-right:4px;"></i>Requisitos: ' + d.requirements + '</div>';
+        html += '<div class="base-sk"><i class="fas fa-star" style="margin-right:4px;"></i>Habilidades base por nivel: ' + d.baseSkills + '</div>';
+        box.innerHTML = html;
     }
 
-    /* ============================================================
-       DOTES
-    ============================================================ */
+    /* ====== DOTES ====== */
     function populateFeats(){
-        const sel=$('featSelect');sel.innerHTML='';
-        FEATS.forEach((f,i)=>{const o=document.createElement('option');o.value=i;o.textContent=f.name;sel.appendChild(o);});
-        sel.addEventListener('change',()=>{
-            currentFeat=FEATS[+sel.value];
-            $('featEffect').textContent=currentFeat.effect+(currentFeat.modifier?' ['+currentFeat.modifier+']':'');
+        var sel = $('featSelect');
+        sel.innerHTML = '';
+        for(var i = 0; i < FEATS.length; i++){
+            var o = document.createElement('option');
+            o.value = i;
+            o.textContent = FEATS[i].name;
+            sel.appendChild(o);
+        }
+        sel.addEventListener('change', function(){
+            currentFeat = FEATS[+sel.value];
+            var txt = currentFeat.effect;
+            if(currentFeat.modifier) txt += ' [' + currentFeat.modifier + ']';
+            $('featEffect').textContent = txt;
             updateAll();
         });
-        $('featEffect').textContent=FEATS[0].effect;
+        $('featEffect').textContent = FEATS[0].effect;
     }
 
-    /* ============================================================
-       TALENTOS
-    ============================================================ */
+    /* ====== TALENTOS ====== */
     function populateTalents(){
-        const sel=$('talentSelect'),d=getCls(classType.value);sel.innerHTML='';
-        d.talents.forEach((t,i)=>{const o=document.createElement('option');o.value=i;o.textContent=t;sel.appendChild(o);});
-        currentTalent=d.talents[0]||null;
-        $('talentEffect').textContent=currentTalent?'Talento de '+classType.value+': '+currentTalent:'';
-        sel.onchange=()=>{
-            currentTalent=d.talents[+sel.value]||null;
-            $('talentEffect').textContent=currentTalent?'Talento de '+classType.value+': '+currentTalent:'';
+        var sel = $('talentSelect');
+        var d = getCls(classType.value);
+        sel.innerHTML = '';
+        for(var i = 0; i < d.talents.length; i++){
+            var o = document.createElement('option');
+            o.value = i;
+            o.textContent = d.talents[i];
+            sel.appendChild(o);
+        }
+        currentTalent = d.talents[0] || null;
+        var txt = currentTalent ? 'Talento de ' + classType.value + ': ' + currentTalent : '';
+        $('talentEffect').textContent = txt;
+        sel.onchange = function(){
+            currentTalent = d.talents[+sel.value] || null;
+            var txt2 = currentTalent ? 'Talento de ' + classType.value + ': ' + currentTalent : '';
+            $('talentEffect').textContent = txt2;
             updateAll();
         };
     }
 
-    /* ============================================================
-       HABILIDADES
-    ============================================================ */
+    /* ====== HABILIDADES ====== */
     function populateSkills(){
-        const box=$('skillListContainer');box.innerHTML='';
-        ALL_SKILLS.forEach(sk=>{
-            const div=document.createElement('div');div.className='sk-item';
-            const cb=document.createElement('input');cb.type='checkbox';cb.id='sk_'+sk.name;cb.value=sk.name;
-            cb.checked=trainedSkills.includes(sk.name);
-            cb.addEventListener('change',onSkillChange);
-            const lbl=document.createElement('label');lbl.htmlFor='sk_'+sk.name;lbl.textContent=sk.name;
-            const mod=document.createElement('span');mod.className='sk-mod';mod.textContent='('+sk.attr+')';
-            div.appendChild(cb);div.appendChild(lbl);div.appendChild(mod);
+        var box = $('skillListContainer');
+        box.innerHTML = '';
+        for(var i = 0; i < ALL_SKILLS.length; i++){
+            var sk = ALL_SKILLS[i];
+            var div = document.createElement('div');
+            div.className = 'sk-item';
+            var cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.id = 'sk_' + i;
+            cb.value = sk.name;
+            cb.checked = trainedSkills.indexOf(sk.name) >= 0;
+            cb.addEventListener('change', onSkillChange);
+            var lbl = document.createElement('label');
+            lbl.htmlFor = 'sk_' + i;
+            lbl.textContent = sk.name;
+            var mod = document.createElement('span');
+            mod.className = 'sk-mod';
+            mod.textContent = '(' + sk.attr + ')';
+            div.appendChild(cb);
+            div.appendChild(lbl);
+            div.appendChild(mod);
             box.appendChild(div);
-        });
+        }
         updateSkillCount();
     }
     function onSkillChange(e){
-        const name=e.target.value,max=getMaxSkills();
+        var name = e.target.value, max = getMaxSkills();
         if(e.target.checked){
-            if(trainedSkills.length>=max){e.target.checked=false;showToast('Maximo de '+max+' habilidades alcanzado');return;}
+            if(trainedSkills.length >= max){
+                e.target.checked = false;
+                showToast('Maximo de ' + max + ' habilidades alcanzado');
+                return;
+            }
             trainedSkills.push(name);
-        }else{trainedSkills=trainedSkills.filter(s=>s!==name);}
-        updateSkillCount();updateAll();
+        } else {
+            trainedSkills = trainedSkills.filter(function(s){ return s !== name; });
+        }
+        updateSkillCount();
+        updateAll();
     }
     function updateSkillCount(){
-        $('trainedCount').textContent=trainedSkills.length;
-        $('maxSkills').textContent=getMaxSkills();
+        $('trainedCount').textContent = trainedSkills.length;
+        $('maxSkills').textContent = getMaxSkills();
     }
-    $('learnSkillBtn').addEventListener('click',()=>{
-        const max=getMaxSkills();
-        if(trainedSkills.length>=max){showToast('Maximo de habilidades alcanzado');return;}
-        const first=ALL_SKILLS.find(s=>!trainedSkills.includes(s.name));
-        if(first){trainedSkills.push(first.name);populateSkills();updateAll();showToast('Aprendida: '+first.name);}
+
+    $('learnSkillBtn').addEventListener('click', function(){
+        var max = getMaxSkills();
+        if(trainedSkills.length >= max){ showToast('Maximo de habilidades alcanzado'); return; }
+        var first = null;
+        for(var i = 0; i < ALL_SKILLS.length; i++){
+            if(trainedSkills.indexOf(ALL_SKILLS[i].name) < 0){ first = ALL_SKILLS[i]; break; }
+        }
+        if(first){ trainedSkills.push(first.name); populateSkills(); updateAll(); showToast('Aprendida: ' + first.name); }
     });
-    $('unlearnSkillBtn').addEventListener('click',()=>{
-        if(!trainedSkills.length){showToast('No hay habilidades para desaprender');return;}
-        const rem=trainedSkills.pop();populateSkills();updateAll();showToast('Desaprendida: '+rem);
+    $('unlearnSkillBtn').addEventListener('click', function(){
+        if(!trainedSkills.length){ showToast('No hay habilidades para desaprender'); return; }
+        var rem = trainedSkills.pop();
+        populateSkills(); updateAll(); showToast('Desaprendida: ' + rem);
     });
 
-    /* ============================================================
-       PUNTOS DE CARACTERÍSTICAS
-    ============================================================ */
+    /* ====== PUNTOS ====== */
     function updatePoints(){
-        const used=calcPuntosUsados(),max=getPuntosMax(),left=max-used;
-        $('availablePoints').textContent=used+'/'+max;
-        const w=$('pointsWarning');
-        if(left>0)w.innerHTML=`<span class="pts-left">${left} puntos disponibles</span>`;
-        else if(left===0)w.innerHTML=`<span class="pts-ok">Puntos exactos</span>`;
-        else w.innerHTML=`<span class="pts-over">Sobrepasado por ${Math.abs(left)} puntos</span>`;
+        var used = calcPuntosUsados(), max = getPuntosMax(), left = max - used;
+        $('availablePoints').textContent = used + '/' + max;
+        var w = $('pointsWarning');
+        if(left > 0) w.innerHTML = '<span class="pts-left">' + left + ' puntos disponibles</span>';
+        else if(left === 0) w.innerHTML = '<span class="pts-ok">Puntos exactos</span>';
+        else w.innerHTML = '<span class="pts-over">Sobrepasado por ' + Math.abs(left) + ' puntos</span>';
     }
 
-    /* ============================================================
-       CÁLCULO DE COMBATE
-    ============================================================ */
-    function calcHP(){
-        const lv=parseInt(level.value)||1;
-        const conMod=getMod(parseInt(con.value)||10);
-        const baseHP=10+conMod;
-        const perLevel=5+conMod;
-        return Math.max(1,baseHP+(lv-1)*perLevel);
+    /* ====== CÁLCULO DE COMBATE ====== */
+    function calcHP(data){
+        var d = data || {};
+        var conVal = d.con != null ? d.con : (parseInt(con.value) || 10);
+        var lv = d.level != null ? d.level : (parseInt(level.value) || 1);
+        var conMod = getMod(conVal);
+        var baseHP = 10 + conMod;
+        var perLevel = 5 + conMod;
+        return Math.max(1, baseHP + (lv - 1) * perLevel);
     }
-    function calcDefenses(){
-        const lv=parseInt(level.value)||1;
-        const desMod=getMod(parseInt(des.value)||10);
-        const conMod=getMod(parseInt(con.value)||10);
-        const sabMod=getMod(parseInt(sab.value)||10);
-        const base=10;
-        const trainedBonus=trainedSkills.length>0?2:0;
-        return{
-            ref:base+desMod+trainedBonus,
-            fort:base+conMod+trainedBonus,
-            will:base+sabMod+trainedBonus
+    function calcDefenses(data){
+        var d = data || {};
+        var desVal = d.des != null ? d.des : (parseInt(des.value) || 10);
+        var conVal = d.con != null ? d.con : (parseInt(con.value) || 10);
+        var sabVal = d.sab != null ? d.sab : (parseInt(sab.value) || 10);
+        var skills = d.skills != null ? d.skills : trainedSkills;
+        var desMod = getMod(desVal);
+        var conMod = getMod(conVal);
+        var sabMod = getMod(sabVal);
+        var trainedBonus = skills.length > 0 ? 2 : 0;
+        return {
+            ref: 10 + desMod + trainedBonus,
+            fort: 10 + conMod + trainedBonus,
+            will: 10 + sabMod + trainedBonus
         };
     }
 
-    /* ============================================================
-       ACTUALIZAR VISTA PREVIA
-    ============================================================ */
+    /* ====== ACTUALIZAR VISTA PREVIA ====== */
     function updateAll(){
-        updatePoints();updateSkillCount();updatePreview();
+        updatePoints();
+        updateSkillCount();
+        updatePreview();
     }
     function updatePreview(){
-        const name=charName.value||'Sin nombre';
-        const sp=species.value,cls=classType.value,lv=parseInt(level.value)||1;
-        const clsData=getCls(cls);
+        var name = charName.value || 'Sin nombre';
+        var sp = species.value;
+        var cls = classType.value;
+        var lv = parseInt(level.value) || 1;
+        var clsData = getCls(cls);
 
-        // Nombre
-        $('dispName').textContent=name;
+        $('dispName').textContent = name;
 
-        // Badges
-        let badges='';
-        badges+=`<span class="cc-badge ${clsData.type==='prestige'?'prestige-b':'class-b'}">${cls}</span>`;
-        badges+=`<span class="cc-badge species-b">${sp}</span>`;
-        badges+=`<span class="cc-badge level-b">Nivel ${lv}</span>`;
-        $('dispBadges').innerHTML=badges;
+        var badges = '';
+        badges += '<span class="cc-badge ' + (clsData.type === 'prestige' ? 'prestige-b' : 'class-b') + '">' + cls + '</span>';
+        badges += '<span class="cc-badge species-b">' + sp + '</span>';
+        badges += '<span class="cc-badge level-b">Nivel ' + lv + '</span>';
+        $('dispBadges').innerHTML = badges;
 
-        // Mod especie
-        $('dispSpeciesMods').textContent='Mod. especie: '+getSpeciesModText();
+        $('dispSpeciesMods').textContent = 'Mod. especie: ' + getSpeciesModText();
 
-        // Stats
-        const attrs=[
-            {n:'FUE',v:+fue.value},{n:'DES',v:+des.value},{n:'CON',v:+con.value},
-            {n:'INT',v:+int.value},{n:'SAB',v:+sab.value},{n:'CAR',v:+car.value}
+        var attrs = [
+            {n:'FUE', v:+fue.value}, {n:'DES', v:+des.value}, {n:'CON', v:+con.value},
+            {n:'INT', v:+int_.value}, {n:'SAB', v:+sab.value}, {n:'CAR', v:+car.value}
         ];
-        $('statsGrid').innerHTML=attrs.map(a=>`<div class="cc-stat"><div class="cs-name">${a.n}</div><div class="cs-val">${a.v}</div><div class="cs-mod">${getMod(a.v)>=0?'+':''}${getMod(a.v)}</div></div>`).join('');
+        var statsHTML = '';
+        for(var i = 0; i < attrs.length; i++){
+            var a = attrs[i];
+            var m = getMod(a.v);
+            statsHTML += '<div class="cc-stat"><div class="cs-name">' + a.n + '</div><div class="cs-val">' + a.v + '</div><div class="cs-mod">' + (m >= 0 ? '+' : '') + m + '</div></div>';
+        }
+        $('statsGrid').innerHTML = statsHTML;
 
-        // Dote
-        $('dispFeat').textContent=currentFeat.name;
-        $('dispFeatEffect').textContent=currentFeat.effect+(currentFeat.modifier?' ['+currentFeat.modifier+']':'');
+        $('dispFeat').textContent = currentFeat.name;
+        var featTxt = currentFeat.effect;
+        if(currentFeat.modifier) featTxt += ' [' + currentFeat.modifier + ']';
+        $('dispFeatEffect').textContent = featTxt;
 
-        // Talento
-        $('dispTal').textContent=currentTalent||'Ninguno';
-        $('dispTalEffect').textContent=currentTalent?'Talento de '+cls+': '+currentTalent:'';
+        $('dispTal').textContent = currentTalent || 'Ninguno';
+        $('dispTalEffect').textContent = currentTalent ? 'Talento de ' + cls + ': ' + currentTalent : '';
 
-        // HP
-        $('dispHP').textContent=calcHP();
+        $('dispHP').textContent = calcHP();
 
-        // Defensas
-        const def=calcDefenses();
-        $('dispRef').textContent=def.ref;
-        $('dispFort').textContent=def.fort;
-        $('dispWill').textContent=def.will;
+        var def = calcDefenses();
+        $('dispRef').textContent = def.ref;
+        $('dispFort').textContent = def.fort;
+        $('dispWill').textContent = def.will;
 
-        // Arma
-        $('dispWeapon').innerHTML='<strong>Arma:</strong> '+weapon.value;
+        $('dispWeapon').innerHTML = '<strong>Arma:</strong> ' + weapon.value;
 
-        // Habilidades
-        if(trainedSkills.length>0){
-            $('dispSkillsList').textContent=trainedSkills.join(', ');
-        }else{
-            $('dispSkillsList').textContent='Ninguna entrenada';
+        if(trainedSkills.length > 0){
+            $('dispSkillsList').textContent = trainedSkills.join(', ');
+        } else {
+            $('dispSkillsList').textContent = 'Ninguna entrenada';
         }
 
-        // Foto
-        const url=photoUrl.value.trim();
+        var url = photoUrl.value.trim();
         if(url){
-            $('dispPhoto').innerHTML=`<img src="${url}" alt="Foto de ${name}" onerror="this.parentElement.innerHTML='<div class=\\'ph-placeholder\\'><i class=\\'fas fa-exclamation-triangle\\' style=\\'font-size:1.5rem;display:block;margin-bottom:4px;color:var(--accent-orange)\\'></i>Error al cargar</div>'">`;
-        }else{
-            $('dispPhoto').innerHTML='<div class="ph-placeholder"><i class="fas fa-user-astronaut" style="font-size:2rem;display:block;margin-bottom:6px;"></i>Sin imagen</div>';
+            var img = document.createElement('img');
+            img.src = url;
+            img.alt = 'Foto de ' + name;
+            img.onerror = function(){
+                $('dispPhoto').innerHTML = '<div class="ph-placeholder"><i class="fas fa-exclamation-triangle" style="font-size:1.5rem;display:block;margin-bottom:4px;color:var(--accent-orange);"></i>Error al cargar</div>';
+            };
+            $('dispPhoto').innerHTML = '';
+            $('dispPhoto').appendChild(img);
+        } else {
+            $('dispPhoto').innerHTML = '<div class="ph-placeholder"><i class="fas fa-user-astronaut" style="font-size:2rem;display:block;margin-bottom:6px;"></i>Sin imagen</div>';
         }
     }
 
-    /* ============================================================
-       GUARDAR / CARGAR
-    ============================================================ */
-    function getSaved(){try{return JSON.parse(localStorage.getItem('sw_chars'))||[];}catch(e){return[];}}
-    function setSaved(arr){localStorage.setItem('sw_chars',JSON.stringify(arr));}
+    /* ====== GUARDAR / CARGAR ====== */
+    function getSaved(){
+        try { return JSON.parse(localStorage.getItem('sw_chars')) || []; }
+        catch(e){ return []; }
+    }
+    function setSaved(arr){ localStorage.setItem('sw_chars', JSON.stringify(arr)); }
+
     function gatherData(){
-        return{
-            name:charName.value,species:species.value,class:classType.value,
-            level:+level.value,fue:+fue.value,des:+des.value,con:+con.value,
-            int:+int.value,sab:+sab.value,car:+car.value,
-            skills:[...trainedSkills],feat:FEATS.indexOf(currentFeat),
-            talent:currentTalent,weapon:weapon.value,photo:photoUrl.value,
-            ts:Date.now()
+        return {
+            name: charName.value,
+            species: species.value,
+            class: classType.value,
+            level: +level.value,
+            fue: +fue.value, des: +des.value, con: +con.value,
+            int: +int_.value, sab: +sab.value, car: +car.value,
+            skills: trainedSkills.slice(),
+            feat: FEATS.indexOf(currentFeat),
+            talent: currentTalent,
+            weapon: weapon.value,
+            photo: photoUrl.value,
+            ts: Date.now()
         };
     }
     function applyData(d){
-        charName.value=d.name||'';
-        species.value=d.species||'Humano';
-        classType.value=d.class||'Explorador';
-        level.value=d.level||1;
-        fue.value=d.fue||10;des.value=d.des||10;con.value=d.con||10;
-        int.value=d.int||10;sab.value=d.sab||10;car.value=d.car||10;
-        trainedSkills=d.skills||[];
-        currentFeat=FEATS[d.feat||0];
-        $('featSelect').value=d.feat||0;
-        $('featEffect').textContent=currentFeat.effect+(currentFeat.modifier?' ['+currentFeat.modifier+']':'');
-        weapon.value=d.weapon||'Sable de luz (2d8)';
-        photoUrl.value=d.photo||'';
-        updateSpeciesInfo();updateClassInfo();populateTalents();
+        charName.value = d.name || '';
+        species.value = d.species || 'Humano';
+        classType.value = d.class || 'Explorador';
+        level.value = d.level || 1;
+        fue.value = d.fue || 10;
+        des.value = d.des || 10;
+        con.value = d.con || 10;
+        int_.value = d.int || 10;
+        sab.value = d.sab || 10;
+        car.value = d.car || 10;
+        trainedSkills = d.skills ? d.skills.slice() : [];
+        var featIdx = d.feat || 0;
+        currentFeat = FEATS[featIdx] || FEATS[0];
+        $('featSelect').value = featIdx;
+        var featTxt = currentFeat.effect;
+        if(currentFeat.modifier) featTxt += ' [' + currentFeat.modifier + ']';
+        $('featEffect').textContent = featTxt;
+        weapon.value = d.weapon || 'Sable de luz (2d8)';
+        photoUrl.value = d.photo || '';
+        updateSpeciesInfo();
+        updateClassInfo();
+        populateTalents();
         if(d.talent){
-            const ts=getCls(classType.value).talents;
-            const idx=ts.indexOf(d.talent);
-            if(idx>=0){$('talentSelect').value=idx;currentTalent=d.talent;$('talentEffect').textContent='Talento de '+classType.value+': '+currentTalent;}
+            var ts = getCls(classType.value).talents;
+            var idx = ts.indexOf(d.talent);
+            if(idx >= 0){
+                $('talentSelect').value = idx;
+                currentTalent = d.talent;
+                $('talentEffect').textContent = 'Talento de ' + classType.value + ': ' + currentTalent;
+            }
         }
-        populateSkills();updateAll();
+        populateSkills();
+        updateAll();
     }
     function renderSavedList(){
-        const arr=getSaved(),box=$('savedList');
-        if(!arr.length){box.innerHTML='<div style="color:var(--text-muted);font-size:.85rem;padding:8px 0;">Sin personajes guardados.</div>';return;}
-        box.innerHTML=arr.map((c,i)=>{
-            const date=new Date(c.ts).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric'});
-            return `<div class="saved-item"><div><div class="si-name">${c.name||'Sin nombre'}</div><div class="si-info">${c.species} ${c.class} Nv.${c.level} — ${date}</div></div><button class="si-del" data-idx="${i}" aria-label="Eliminar"><i class="fas fa-trash"></i></button></div>`;
-        }).join('');
-        box.querySelectorAll('.si-del').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();const idx=+btn.dataset.idx;const arr=getSaved();arr.splice(idx,1);setSaved(arr);renderSavedList();showToast('Personaje eliminado');});});
+        var arr = getSaved(), box = $('savedList');
+        if(!arr.length){
+            box.innerHTML = '<div style="color:var(--text-muted);font-size:.85rem;padding:8px 0;">Sin personajes guardados.</div>';
+            return;
+        }
+        var html = '';
+        for(var i = 0; i < arr.length; i++){
+            var c = arr[i];
+            var date = new Date(c.ts).toLocaleDateString('es-ES', {day:'2-digit', month:'short', year:'numeric'});
+            html += '<div class="saved-item"><div><div class="si-name">' + (c.name || 'Sin nombre') + '</div><div class="si-info">' + c.species + ' ' + c.class + ' Nv.' + c.level + ' — ' + date + '</div></div><button class="si-del" data-idx="' + i + '" aria-label="Eliminar"><i class="fas fa-trash"></i></button></div>';
+        }
+        box.innerHTML = html;
+        var delBtns = box.querySelectorAll('.si-del');
+        for(var j = 0; j < delBtns.length; j++){
+            (function(btn){
+                btn.addEventListener('click', function(e){
+                    e.stopPropagation();
+                    var idx = +btn.dataset.idx;
+                    var a = getSaved();
+                    a.splice(idx, 1);
+                    setSaved(a);
+                    renderSavedList();
+                    showToast('Personaje eliminado');
+                });
+            })(delBtns[j]);
+        }
     }
 
-    $('saveCharBtn').addEventListener('click',()=>{
-        const d=gatherData();if(!d.name.trim()){showToast('Introduce un nombre');charName.focus();return;}
-        const arr=getSaved();
-        const existIdx=arr.findIndex(c=>c.name===d.name);
-        if(existIdx>=0)arr[existIdx]=d;else arr.push(d);
-        setSaved(arr);renderSavedList();showToast('Personaje guardado: '+d.name);
+    $('saveCharBtn').addEventListener('click', function(){
+        var d = gatherData();
+        if(!d.name.trim()){ showToast('Introduce un nombre'); charName.focus(); return; }
+        var arr = getSaved();
+        var existIdx = -1;
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i].name === d.name){ existIdx = i; break; }
+        }
+        if(existIdx >= 0) arr[existIdx] = d;
+        else arr.push(d);
+        setSaved(arr);
+        renderSavedList();
+        showToast('Personaje guardado: ' + d.name);
     });
 
-    $('loadCharBtn').addEventListener('click',()=>{
-        const arr=getSaved(),box=$('modalSavedList'),empty=$('modalEmpty');
-        if(!arr.length){box.innerHTML='';empty.style.display='block';}else{
-            empty.style.display='none';
-            box.innerHTML=arr.map((c,i)=>{
-                const date=new Date(c.ts).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric'});
-                return `<div class="saved-item" style="cursor:pointer;" data-idx="${i}"><div><div class="si-name">${c.name||'Sin nombre'}</div><div class="si-info">${c.species} ${c.class} Nv.${c.level} — ${date}</div></div><i class="fas fa-arrow-right" style="color:var(--accent-yellow);"></i></div>`;
-            }).join('');
-            box.querySelectorAll('.saved-item').forEach(item=>{
-                item.addEventListener('click',()=>{
-                    const idx=+item.dataset.idx;applyData(getSaved()[idx]);
-                    $('loadModal').classList.remove('active');showToast('Cargado: '+getSaved()[idx].name);
-                });
-            });
+    $('loadCharBtn').addEventListener('click', function(){
+        var arr = getSaved(), box = $('modalSavedList'), empty = $('modalEmpty');
+        if(!arr.length){
+            box.innerHTML = '';
+            empty.style.display = 'block';
+        } else {
+            empty.style.display = 'none';
+            var html = '';
+            for(var i = 0; i < arr.length; i++){
+                var c = arr[i];
+                var date = new Date(c.ts).toLocaleDateString('es-ES', {day:'2-digit', month:'short', year:'numeric'});
+                html += '<div class="saved-item clickable" data-idx="' + i + '"><div><div class="si-name">' + (c.name || 'Sin nombre') + '</div><div class="si-info">' + c.species + ' ' + c.class + ' Nv.' + c.level + ' — ' + date + '</div></div><i class="fas fa-arrow-right" style="color:var(--accent-yellow);"></i></div>';
+            }
+            box.innerHTML = html;
+            var items = box.querySelectorAll('.saved-item');
+            for(var j = 0; j < items.length; j++){
+                (function(item){
+                    item.addEventListener('click', function(){
+                        var idx = +item.dataset.idx;
+                        var saved = getSaved();
+                        applyData(saved[idx]);
+                        $('loadModal').classList.remove('active');
+                        showToast('Cargado: ' + saved[idx].name);
+                    });
+                })(items[j]);
+            }
         }
         $('loadModal').classList.add('active');
     });
-    $('closeModal').addEventListener('click',()=>$('loadModal').classList.remove('active'));
-    $('loadModal').addEventListener('click',e=>{if(e.target===$('loadModal'))$('loadModal').classList.remove('active');});
+    $('closeModal').addEventListener('click', function(){ $('loadModal').classList.remove('active'); });
+    $('loadModal').addEventListener('click', function(e){ if(e.target === $('loadModal')) $('loadModal').classList.remove('active'); });
 
-    /* ============================================================
-       EXPORTAR HTML
-    ============================================================ */
-    $('htmlBtn').addEventListener('click',()=>{
-        const d=gatherData(),clsData=getCls(d.class);
-        const attrs=[{n:'FUE',v:d.fue},{n:'DES',v:d.des},{n:'CON',v:d.con},{n:'INT',v:d.int},{n:'SAB',v:d.sab},{n:'CAR',v:d.car}];
-        const photoBlock=d.photo?`<div style="text-align:center;margin-bottom:12px;"><img src="${d.photo}" alt="Foto" style="max-width:200px;border-radius:12px;border:2px solid #ffd966;"></div>`:'';
-        const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>${d.name} — Star Wars</title><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"><style>body{background:#0a0800;color:#f0e6c8;font-family:'Rajdhani',sans-serif;max-width:700px;margin:40px auto;padding:20px;}.card{background:#1a1408;border:2px solid #ffd966;border-radius:18px;padding:24px;}h1{font-family:'Orbitron',sans-serif;color:#ffe81f;font-size:1.4rem;border-left:4px solid #ffd966;padding-left:14px;margin-bottom:12px;}.badges span{display:inline-block;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;margin:0 4px 4px 0;}.b-cls{background:#3a2e0a;color:#ffe81f;border:1px solid #ffd966;}.b-sp{background:#0a2e0a;color:#2ed573;border:1px solid #2ed573;}.b-lv{background:#3a2e0a;color:#ffc107;border:1px solid #ffc107;}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#0f0a02;padding:10px;border-radius:12px;margin:12px 0;border:1px solid #5a4a1e;}.stat{text-align:center;background:#1a1408;padding:8px;border-radius:8px;}.stat .sn{font-size:.7rem;color:#8a7530;text-transform:uppercase;}.stat .sv{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#ffd966;}.stat .sm{font-size:.8rem;color:#c8a850;}.row{margin:8px 0;font-size:.95rem;}.row strong{color:#fff;}.effect{font-size:.85rem;color:#c8a850;margin-left:6px;}.hp-box{text-align:center;background:#1a0a0a;border:1px solid #ff4757;border-radius:12px;padding:12px;margin:10px 0;}.hp-box .label{font-size:.75rem;color:#666;text-transform:uppercase;}.hp-box .val{font-family:'Orbitron',sans-serif;font-size:1.6rem;color:#ff4757;}.defs{display:flex;justify-content:space-around;background:#0f0a02;padding:10px;border-radius:12px;margin:10px 0;border:1px solid #5a4a1e;}.def{text-align:center;}.def .dl{font-size:.7rem;color:#8a7530;text-transform:uppercase;}.def .dv{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#ffd966;}.weapon-box{text-align:center;background:#0f0a02;padding:10px;border-radius:12px;margin:10px 0;border:1px solid #5a4a1e;font-size:.95rem;}.weapon-box strong{color:#ffd966;}.skills{margin:10px 0;font-size:.9rem;color:#c8a850;line-height:1.7;}.footer{text-align:center;margin-top:16px;padding-top:12px;border-top:1px dashed #5a4a1e;font-size:.75rem;color:#5a4a1e;font-style:italic;}</style></head><body><div class="card">${photoBlock}<h1>${d.name}</h1><div class="badges"><span class="b-cls">${d.class}</span><span class="b-sp">${d.species}</span><span class="b-lv">Nivel ${d.level}</span></div><div style="font-size:.85rem;color:#c8a850;margin-bottom:8px;">Mod. especie: ${getSpeciesModText()}</div><div class="stats">${attrs.map(a=>`<div class="stat"><div class="sn">${a.n}</div><div class="sv">${a.v}</div><div class="sm">${getMod(a.v)>=0?'+':''}${getMod(a.v)}</div></div>`).join('')}</div><div class="row"><strong>Dote:</strong> ${currentFeat.name}<span class="effect">${currentFeat.effect}${currentFeat.modifier?' ['+currentFeat.modifier+']':''}</span></div><div class="row"><strong>Talento:</strong> ${currentTalent||'Ninguno'}<span class="effect">${currentTalent?'Talento de '+d.class+': '+currentTalent:''}</span></div><div class="hp-box"><div class="label">Puntos de Golpe</div><div class="val">${calcHP()}</div></div>${(()=>{const def=calcDefenses();return `<div class="defs"><div class="def"><div class="dl">Reflejos</div><div class="dv">${def.ref}</div></div><div class="def"><div class="dl">Fortaleza</div><div class="dv">${def.fort}</div></div><div class="def"><div class="dl">Voluntad</div><div class="dv">${def.will}</div></div></div>`;})()}<div class="weapon-box"><strong>Arma:</strong> ${d.weapon}</div><div class="skills"><strong>Habilidades entrenadas:</strong><br>${d.skills.length?d.skills.join(', '):'Ninguna'}</div><div class="footer">Star Wars Saga Edition — Generado por Creador de Heroes</div></div></body></html>`;
-        const blob=new Blob([html],{type:'text/html'});
-        const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(d.name||'personaje')+'_sw.html';a.click();
-        URL.revokeObjectURL(a.href);showToast('HTML exportado');
+    /* ====== EXPORTAR HTML ====== */
+    $('htmlBtn').addEventListener('click', function(){
+        var d = gatherData();
+        /* AQUÍ ESTABA EL BUG: {n:'CON',d.con} en vez de {n:'CON',v:d.con} */
+        var attrs = [
+            {n:'FUE', v:d.fue}, {n:'DES', v:d.des}, {n:'CON', v:d.con},
+            {n:'INT', v:d.int}, {n:'SAB', v:d.sab}, {n:'CAR', v:d.car}
+        ];
+        var photoBlock = d.photo
+            ? '<div style="text-align:center;margin-bottom:12px;"><img src="' + d.photo + '" alt="Foto" style="max-width:200px;border-radius:12px;border:2px solid #ffd966;"></div>'
+            : '';
+
+        var statsHTML = '';
+        for(var i = 0; i < attrs.length; i++){
+            var a = attrs[i];
+            var m = getMod(a.v);
+            statsHTML += '<div class="stat"><div class="sn">' + a.n + '</div><div class="sv">' + a.v + '</div><div class="sm">' + (m >= 0 ? '+' : '') + m + '</div></div>';
+        }
+
+        var hp = calcHP(d);
+        var def = calcDefenses(d);
+
+        var featTxt = currentFeat.effect;
+        if(currentFeat.modifier) featTxt += ' [' + currentFeat.modifier + ']';
+
+        var skillsHTML = d.skills.length ? d.skills.join(', ') : 'Ninguna';
+
+        var html = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>' + d.name + ' — Star Wars</title>'
+            + '<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">'
+            + '<style>body{background:#0a0800;color:#f0e6c8;font-family:Rajdhani,sans-serif;max-width:700px;margin:40px auto;padding:20px;}'
+            + '.card{background:#1a1408;border:2px solid #ffd966;border-radius:18px;padding:24px;}'
+            + 'h1{font-family:Orbitron,sans-serif;color:#ffe81f;font-size:1.4rem;border-left:4px solid #ffd966;padding-left:14px;margin-bottom:12px;}'
+            + '.badges span{display:inline-block;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;margin:0 4px 4px 0;}'
+            + '.b-cls{background:#3a2e0a;color:#ffe81f;border:1px solid #ffd966;}'
+            + '.b-sp{background:#0a2e0a;color:#2ed573;border:1px solid #2ed573;}'
+            + '.b-lv{background:#3a2e0a;color:#ffc107;border:1px solid #ffc107;}'
+            + '.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#0f0a02;padding:10px;border-radius:12px;margin:12px 0;border:1px solid #5a4a1e;}'
+            + '.stat{text-align:center;background:#1a1408;padding:8px;border-radius:8px;}'
+            + '.sn{font-size:.7rem;color:#8a7530;text-transform:uppercase;}'
+            + '.sv{font-family:Orbitron,sans-serif;font-size:1.1rem;color:#ffd966;}'
+            + '.sm{font-size:.8rem;color:#c8a850;}'
+            + '.row{margin:8px 0;font-size:.95rem;}.row strong{color:#fff;}'
+            + '.effect{font-size:.85rem;color:#c8a850;margin-left:6px;}'
+            + '.hp-box{text-align:center;background:#1a0a0a;border:1px solid #ff4757;border-radius:12px;padding:12px;margin:10px 0;}'
+            + '.hp-box .label{font-size:.75rem;color:#666;text-transform:uppercase;}'
+            + '.hp-box .val{font-family:Orbitron,sans-serif;font-size:1.6rem;color:#ff4757;}'
+            + '.defs{display:flex;justify-content:space-around;background:#0f0a02;padding:10px;border-radius:12px;margin:10px 0;border:1px solid #5a4a1e;}'
+            + '.def{text-align:center;}.dl{font-size:.7rem;color:#8a7530;text-transform:uppercase;}'
+            + '.dv{font-family:Orbitron,sans-serif;font-size:1.1rem;color:#ffd966;}'
+            + '.weapon-box{text-align:center;background:#0f0a02;padding:10px;border-radius:12px;margin:10px 0;border:1px solid #5a4a1e;font-size:.95rem;}'
+            + '.weapon-box strong{color:#ffd966;}'
+            + '.skills{margin:10px 0;font-size:.9rem;color:#c8a850;line-height:1.7;}'
+            + '.footer{text-align:center;margin-top:16px;padding-top:12px;border-top:1px dashed #5a4a1e;font-size:.75rem;color:#5a4a1e;font-style:italic;}'
+            + '</style></head><body><div class="card">'
+            + photoBlock
+            + '<h1>' + d.name + '</h1>'
+            + '<div class="badges"><span class="b-cls">' + d.class + '</span><span class="b-sp">' + d.species + '</span><span class="b-lv">Nivel ' + d.level + '</span></div>'
+            + '<div style="font-size:.85rem;color:#c8a850;margin-bottom:8px;">Mod. especie: ' + getSpeciesModText() + '</div>'
+            + '<div class="stats">' + statsHTML + '</div>'
+            + '<div class="row"><strong>Dote:</strong> ' + currentFeat.name + '<span class="effect">' + featTxt + '</span></div>'
+            + '<div class="row"><strong>Talento:</strong> ' + (currentTalent || 'Ninguno') + '<span class="effect">' + (currentTalent ? 'Talento de ' + d.class + ': ' + currentTalent : '') + '</span></div>'
+            + '<div class="hp-box"><div class="label">Puntos de Golpe</div><div class="val">' + hp + '</div></div>'
+            + '<div class="defs"><div class="def"><div class="dl">Reflejos</div><div class="dv">' + def.ref + '</div></div><div class="def"><div class="dl">Fortaleza</div><div class="dv">' + def.fort + '</div></div><div class="def"><div class="dl">Voluntad</div><div class="dv">' + def.will + '</div></div></div>'
+            + '<div class="weapon-box"><strong>Arma:</strong> ' + d.weapon + '</div>'
+            + '<div class="skills"><strong>Habilidades entrenadas:</strong><br>' + skillsHTML + '</div>'
+            + '<div class="footer">Star Wars Saga Edition — Generado por Creador de Heroes</div>'
+            + '</div></body></html>';
+
+        var blob = new Blob([html], {type:'text/html'});
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = (d.name || 'personaje') + '_sw.html';
+        a.click();
+        URL.revokeObjectURL(a.href);
+        showToast('HTML exportado');
     });
 
-    /* ============================================================
-       EXPORTAR PDF (imprimir)
-    ============================================================ */
-    $('pdfBtn').addEventListener('click',()=>{
-        const d=gatherData(),clsData=getCls(d.class);
-        const attrs=[{n:'FUE',v:d.fue},{n:'DES',v:d.des},{n:'CON',d.con},{n:'INT',v:d.int},{n:'SAB',v:d.sab},{n:'CAR',v:d.car}];
-        const def=calcDefenses();
-        const photoImg=d.photo?`<img src="${d.photo}" alt="Foto">`:'Sin foto';
-        const skillsRows=d.skills.map(s=>{const sk=ALL_SKILLS.find(x=>x.name===s);return sk?`<tr><td>${sk.name}</td><td>${sk.attr}</td><td>${getMod(getAttr(sk.attr))>=0?'+':''}${getMod(getAttr(sk.attr))}</td></tr>`:'';}).join('');
-        const printHTML=`<div class="sw-card"><div class="sw-left"><div class="sw-photo">${photoImg}</div><div class="sw-stats">${attrs.map(a=>`<div class="sw-stat">${a.n}: <span>${a.v}</span> (${getMod(a.v)>=0?'+':''}${getMod(a.v)})</div>`).join('')}</div><div class="sw-hp">PG: <span>${calcHP()}</span></div><div class="sw-defenses"><div>Ref: <strong>${def.ref}</strong></div><div>Fort: <strong>${def.fort}</strong></div><div>Vol: <strong>${def.will}</strong></div></div></div><div class="sw-right"><div class="sw-header"><h1>STAR WARS SAGA EDITION</h1><h2>${d.name}</h2><div class="subtitle">${getSpeciesModText()}</div><div><span class="sw-badge ${clsData.type==='prestige'?'prestige':''}">${d.class}</span><span class="sw-badge">Nivel ${d.level}</span></div></div><div class="sw-combat"><div><strong>Arma:</strong> ${d.weapon}</div><div><strong>Iniciativa:</strong> ${getMod(d.des)>=0?'+':''}${getMod(d.des)}</div></div><div class="sw-feat-talent"><div><strong>Dote:</strong><br>${currentFeat.name}<br><span>${currentFeat.effect}</span></div><div><strong>Talento:</strong><br>${currentTalent||'Ninguno'}<br><span>${currentTalent?'De '+d.class:''}</span></div></div><table class="sw-skills-table"><tr><th>Habilidad</th><th>Atrib.</th><th>Mod.</th></tr>${skillsRows}</table><div class="sw-footer">Star Wars Saga Edition — Ficha de Personaje</div></div></div>`;
+    /* ====== EXPORTAR PDF (imprimir) ====== */
+    $('pdfBtn').addEventListener('click', function(){
+        var d = gatherData();
+        /* AQUÍ ESTABA EL MISMO BUG */
+        var attrs = [
+            {n:'FUE', v:d.fue}, {n:'DES', v:d.des}, {n:'CON', v:d.con},
+            {n:'INT', v:d.int}, {n:'SAB', v:d.sab}, {n:'CAR', v:d.car}
+        ];
 
-        let printArea=document.getElementById('printArea');
-        if(!printArea){printArea=document.createElement('div');printArea.id='printArea';printArea.className='print-area';document.body.appendChild(printArea);}
-        printArea.innerHTML=printHTML;
-        setTimeout(()=>window.print(),200);
+        var photoImg = d.photo ? '<img src="' + d.photo + '" alt="Foto">' : 'Sin foto';
+
+        var statsHTML = '';
+        for(var i = 0; i < attrs.length; i++){
+            var a = attrs[i];
+            var m = getMod(a.v);
+            statsHTML += '<div class="sw-stat">' + a.n + ': <span>' + a.v + '</span> (' + (m >= 0 ? '+' : '') + m + ')</div>';
+        }
+
+        var hp = calcHP(d);
+        var def = calcDefenses(d);
+
+        var skillsRows = '';
+        for(var j = 0; j < d.skills.length; j++){
+            var sName = d.skills[j];
+            var sk = null;
+            for(var k = 0; k < ALL_SKILLS.length; k++){
+                if(ALL_SKILLS[k].name === sName){ sk = ALL_SKILLS[k]; break; }
+            }
+            if(sk){
+                var attrVal = getAttrFromData(sk.attr, d);
+                var sMod = getMod(attrVal);
+                skillsRows += '<tr><td>' + sk.name + '</td><td>' + sk.attr + '</td><td>' + (sMod >= 0 ? '+' : '') + sMod + '</td></tr>';
+            }
+        }
+
+        var clsData = getCls(d.class);
+        var badgeClass = clsData.type === 'prestige' ? ' prestige' : '';
+
+        var printHTML = '<div class="sw-card">'
+            + '<div class="sw-left">'
+            + '<div class="sw-photo">' + photoImg + '</div>'
+            + '<div class="sw-stats">' + statsHTML + '</div>'
+            + '<div class="sw-hp">PG: <span>' + hp + '</span></div>'
+            + '<div class="sw-defenses"><div>Ref: <strong>' + def.ref + '</strong></div><div>Fort: <strong>' + def.fort + '</strong></div><div>Vol: <strong>' + def.will + '</strong></div></div>'
+            + '</div>'
+            + '<div class="sw-right">'
+            + '<div class="sw-header"><h1>STAR WARS SAGA EDITION</h1><h2>' + d.name + '</h2>'
+            + '<div class="subtitle">' + getSpeciesModText() + '</div>'
+            + '<div><span class="sw-badge' + badgeClass + '">' + d.class + '</span><span class="sw-badge">Nivel ' + d.level + '</span></div></div>'
+            + '<div class="sw-combat"><div><strong>Arma:</strong> ' + d.weapon + '</div><div><strong>Iniciativa:</strong> ' + (getMod(d.des) >= 0 ? '+' : '') + getMod(d.des) + '</div></div>'
+            + '<div class="sw-feat-talent"><div><strong>Dote:</strong><br>' + currentFeat.name + '<br><span>' + currentFeat.effect + '</span></div>'
+            + '<div><strong>Talento:</strong><br>' + (currentTalent || 'Ninguno') + '<br><span>' + (currentTalent ? 'De ' + d.class : '') + '</span></div></div>'
+            + '<table class="sw-skills-table"><tr><th>Habilidad</th><th>Atrib.</th><th>Mod.</th></tr>' + skillsRows + '</table>'
+            + '<div class="sw-footer">Star Wars Saga Edition — Ficha de Personaje</div>'
+            + '</div></div>';
+
+        var printArea = document.getElementById('printArea');
+        if(!printArea){
+            printArea = document.createElement('div');
+            printArea.id = 'printArea';
+            printArea.className = 'print-area';
+            document.body.appendChild(printArea);
+        }
+        printArea.innerHTML = printHTML;
+        setTimeout(function(){ window.print(); }, 200);
         showToast('Preparando PDF para impresion...');
     });
 
-    /* ============================================================
-       NIVEL +1
-    ============================================================ */
-    $('levelUpBtn').addEventListener('click',()=>{
-        const v=parseInt(level.value)||1;
-        if(v<20){level.value=v+1;populateSkills();updateAll();showToast('Nivel '+level.value);}
-        else showToast('Nivel maximo alcanzado');
-    });
-
-    /* ============================================================
-       EVENTOS DE CARACTERÍSTICAS
-    ============================================================ */
-    [fue,des,con,int,sab,car].forEach(inp=>{
-        inp.addEventListener('input',()=>{
-            let v=parseInt(inp.value);
-            if(isNaN(v))return;
-            v=Math.max(8,Math.min(18,v));
-            inp.value=v;
+    /* ====== NIVEL +1 ====== */
+    $('levelUpBtn').addEventListener('click', function(){
+        var v = parseInt(level.value) || 1;
+        if(v < 20){
+            level.value = v + 1;
+            populateSkills();
             updateAll();
-        });
+            showToast('Nivel ' + level.value);
+        } else {
+            showToast('Nivel maximo alcanzado');
+        }
     });
-    charName.addEventListener('input',updatePreview);
-    weapon.addEventListener('change',updatePreview);
-    photoUrl.addEventListener('input',updatePreview);
-    level.addEventListener('input',()=>{populateSkills();updateAll();});
 
-    /* ============================================================
-       INICIO
-    ============================================================ */
+    /* ====== EVENTOS DE CARACTERÍSTICAS ====== */
+    var attrInputs = [fue, des, con, int_, sab, car];
+    for(var ai = 0; ai < attrInputs.length; ai++){
+        (function(inp){
+            inp.addEventListener('input', function(){
+                var v = parseInt(inp.value);
+                if(isNaN(v)) return;
+                v = Math.max(8, Math.min(18, v));
+                inp.value = v;
+                updateAll();
+            });
+        })(attrInputs[ai]);
+    }
+
+    charName.addEventListener('input', updatePreview);
+    weapon.addEventListener('change', updatePreview);
+    photoUrl.addEventListener('input', updatePreview);
+    level.addEventListener('input', function(){ populateSkills(); updateAll(); });
+
+    /* ====== INICIO ====== */
     populateSpecies();
     populateClasses();
     populateFeats();
     populateSkills();
     renderSavedList();
     updateAll();
-
-    </script>
-</body>
-</html>
     </script>
 </body>
 </html>
