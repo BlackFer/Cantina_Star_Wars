@@ -20,12 +20,11 @@
             /* ==========================================
                🗡️ ESPADA LÁSER COMPLETA A 45º 🗡️
                ========================================== */
-            /* Tamaño 64x64 y rotación exacta para que el navegador no recorte el mango */
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cfilter id='g' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='1.5' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg transform='rotate(-45 32 32)'%3E%3Crect x='28' y='29' width='30' height='6' rx='3' fill='%2300d4ff' filter='url(%23g)'/%3E%3Crect x='28' y='30.5' width='30' height='3' rx='1.5' fill='%23ffffff' opacity='0.8'/%3E%3Crect x='24' y='27.5' width='4' height='9' rx='1' fill='%23111'/%3E%3Crect x='7.5' y='28' width='16.5' height='8' rx='1.5' fill='%23333'/%3E%3Crect x='10' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='14' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='18' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='4' y='29' width='4' height='6' rx='2' fill='%23444'/%3E%3C/g%3E%3C/svg%3E") 50 14, auto;
         }
 
         /* Forzar la espada en botones */
-        a, button, .sw-btn, .start-overlay {
+        a, button, .sw-btn {
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3Cfilter id='g' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='1.5' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cg transform='rotate(-45 32 32)'%3E%3Crect x='28' y='29' width='30' height='6' rx='3' fill='%2300d4ff' filter='url(%23g)'/%3E%3Crect x='28' y='30.5' width='30' height='3' rx='1.5' fill='%23ffffff' opacity='0.8'/%3E%3Crect x='24' y='27.5' width='4' height='9' rx='1' fill='%23111'/%3E%3Crect x='7.5' y='28' width='16.5' height='8' rx='1.5' fill='%23333'/%3E%3Crect x='10' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='14' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='18' y='29' width='2' height='6' rx='0.5' fill='%23222'/%3E%3Crect x='4' y='29' width='4' height='6' rx='2' fill='%23444'/%3E%3C/g%3E%3C/svg%3E") 50 14, auto;
         }
 
@@ -193,27 +192,29 @@
             opacity: 1; transform: translateX(4px); color: #FFD700;
         }
 
-        .start-overlay {
+        /* ===== INTRO DEL LOGO ===== */
+        .logo-intro {
             position: fixed; inset: 0; z-index: 100;
-            background: rgba(0,0,0,0.92);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            transition: opacity 0.8s ease;
-            -webkit-user-select: none; user-select: none;
+            background: #000;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: none;
+            /* 1s estática + 1.5s zoom+fade = 2.5s total */
+            animation: logoZoomFade 2.5s ease-in forwards;
         }
-        .start-overlay.hidden { opacity: 0; pointer-events: none; }
-        .start-text {
-            color: #FFD700;
-            font-size: clamp(0.8rem,2.5vw,1rem);
-            font-weight: 500; letter-spacing: 0.25em;
-            text-transform: uppercase;
-            animation: startPulse 2s ease-in-out infinite;
-            padding: 0 1rem; text-align: center;
+        .logo-intro img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
         }
-        @keyframes startPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
-        .start-icon {
-            margin-top: 1.25rem; color: rgba(255,215,0,0.4);
-            animation: startPulse 2s ease-in-out infinite;
+        .logo-intro.gone {
+            display: none;
+        }
+        @keyframes logoZoomFade {
+            /* Primer segundo: imagen estática, sin transparencia */
+            0%   { opacity: 1; transform: scale(1); }
+            40%  { opacity: 1; transform: scale(1); }
+            /* Segundo 1.5s: zoom + desvanecimiento hasta desaparecer */
+            100% { opacity: 0; transform: scale(3.5); }
         }
 
         .bottom-bar {
@@ -263,9 +264,9 @@
     <div class="muzzle-flash" id="muzzleFlash"></div>
     <div id="dustContainer"></div>
 
-    <div class="start-overlay" id="startOverlay">
-        <div class="start-text">Toca para entrar</div>
-        <div class="start-icon"><i data-lucide="radio" style="width:28px;height:28px;"></i></div>
+    <!-- Logo intro: pantalla completa 1s estática → 1.5s zoom + desvanecimiento -->
+    <div class="logo-intro" id="logoIntro">
+        <img src="https://z-cdn-media.chatglm.cn/files/6cedee8b-a82b-4a41-aee2-434f6a5a02c3.jpg?auth_key=1883503375-2a8893ee582645319ec6d4a0c10efd1d-0-f23454b520ea6862d92d260b996967e7" alt="STAR WARS">
     </div>
 
     <div class="content">
@@ -358,13 +359,25 @@
             ns.start(now); ns.stop(now+0.15); o.start(now); o.stop(now+0.12);
         }
 
+        /* ===== Audio: arranca desde el primer momento ===== */
         const bgMusic = new Audio('audio.mp3');
         bgMusic.loop = true;
         bgMusic.volume = 0.4;
+        bgMusic.play().catch(function(){});
+
+        /* Fallback: si el navegador bloquea el autoplay, lo intenta en la primera interacción */
+        document.addEventListener('click', function tryPlay() {
+            bgMusic.play().catch(function(){});
+            document.removeEventListener('click', tryPlay);
+        }, { once: true });
+        document.addEventListener('touchstart', function tryPlay() {
+            bgMusic.play().catch(function(){});
+            document.removeEventListener('touchstart', tryPlay);
+        }, { once: true });
 
         bgMusic.addEventListener('error', function() {
             const errorMsg = document.createElement('div');
-            errorMsg.innerText = '❌ Error al cargar el audio. Revisa que el archivo "Star_Wars.mp3" esté en la misma carpeta que este HTML.';
+            errorMsg.innerText = '❌ Error al cargar el audio. Revisa que el archivo "audio.mp3" esté en la misma carpeta que este HTML.';
             errorMsg.style.position = 'fixed';
             errorMsg.style.bottom = '20px';
             errorMsg.style.left = '20px';
@@ -379,15 +392,11 @@
             setTimeout(() => errorMsg.remove(), 8000);
         });
 
-        const overlay = document.getElementById('startOverlay');
-        function begin() {
-            if (overlay.classList.contains('hidden')) return;
-            overlay.classList.add('hidden');
-            bgMusic.play().catch(function(){});
-        }
-        overlay.addEventListener('click', begin);
-        overlay.addEventListener('touchend', function(e) { e.preventDefault(); begin(); });
-        document.addEventListener('keydown', function h() { begin(); document.removeEventListener('keydown', h); });
+        /* ===== Eliminar el logo intro cuando termine la animación ===== */
+        const logoIntro = document.getElementById('logoIntro');
+        logoIntro.addEventListener('animationend', function() {
+            logoIntro.classList.add('gone');
+        });
     </script>
 </body>
 </html>
